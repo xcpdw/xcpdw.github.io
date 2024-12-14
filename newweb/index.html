@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="width=device-width, initial-scale=1.0, user-scalable=0" name="viewport">
+    <title>轩哥软件网盘</title>
+    <meta name="keywords" content="轩哥软件网盘,轩哥软件合集,轩哥软件库,轩哥福利软件,微信公众号：热忱张先生">
+    <meta name="description" content="QQ211611411">
+    <link rel="icon" href="https://q.qlogo.cn/headimg_dl?dst_uin=211611411&spec=640">
+    <style type="text/css">
+      *{padding:0;margin:0}
+      body{background-color:#66BB6A;color:#fff;font-family:-apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif}
+      #main{margin:10px auto;display:flex;justify-content:center;flex-direction:column;align-items:center}
+      .field{width:500px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fff;color:#6c757d;font-size:16px;padding:15px;margin:5px auto;border-radius:6px}
+      .field.desc ul>li{text-align:left;font-size:14px}
+      @media (max-width:500px){#main{padding:0 5px}
+      .field{width:100%;padding:15px 0}
+      .field.desc ul{margin:0 15px}
+      .field.desc ul>li{text-align:left}
+      }
+      ul>li{margin-bottom:10px;list-style-type:none;text-align:center}
+      ul>li.text{font-size:12px;clear:both;width:100%}
+      .field .title{margin-bottom:15px;font-weight:700;color:#343a40}
+      a,a:active,a:focus,a:hover,a:visited{color:inherit;text-decoration:none}
+      .brand{display:flex;align-items:center;justify-content:flex-start;text-align:center;color:#000;font-size:30px;font-weight:200;padding:20px;cursor:pointer}
+      .brand span{color:#fff;font-weight:600}
+      .brand span.flag{color:#00c250;background:#fff;border-radius:6px;font-size:20px;font-weight:700;display:inline-block;padding:0 5px;margin-left:5px}
+      .enter-maomi{width:75%;text-align:center;line-height:40px;border:1px solid #00c250;border-radius:4px;margin-bottom:20px;margin-top:10px}
+      .enter-icon{width:32px;height:41px;float:left;margin-right:5px;background-color:#00c250}
+      .enter-link a{display:block}
+      .icon{width:20px;height:20px;background-position:center;background-size:contain;background-repeat:no-repeat;display:inline-block}
+      .icon_hand{width:27px;height:27px;vertical-align:middle;background-image:url(data:image/png;base64,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);padding-top:12px}
+      .c_black{color:#333;line-height:30px;font-size:12px}
+      .c_blue{color:#00c250}
+      .c_link{font-size:14px;line-height:30px}
+      .c_hs{color:#F44336}
+      .c_hsxgg{font-size:14px;line-height:30px}
+      .c_blxg{color:#00c250}
+      .c_lixg{font-size:16px;line-height:30px}
+      .c_lsxg{color:#424242}
+      .c_lysxg{font-size:16px;line-height:30px}  
+      .c_gonggao{color:#D50000}
+      .c_gonggaox{font-size:14px;line-height:30px}
+      .c_hsxg{color:#333333}
+      .c_hssxg{font-size:14px;line-height:30px}  
+      .fri_link{overflow:hidden;width:80%}
+      .fri_link li{float:left;display:block;font-size:.875rem;width:33.33333333%}
+      .icon_ios_shared{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAuGAAALhgBKqonIAAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNAay06AAAAHsSURBVGiB7ZvLasJAFEBvnsYXhFoKXaRLi/QHWrppl/2mrvtL3dZlf0AElxXsRiVgo+bdTVJEUmUmyYTc3ANCTGbuneMMmTEPKY5jaBJy1Q0QTeOEVZbCN6+z3Akt05A3bjhVZGmxcrznvPG+3oZM5YX2cCpr7/zhyvGeBl39Q2R+AIHClmmoqWy678cNHi3TYBpleREinMhODmUBANwg0jZuOLFMQ9gPX3qiLNmWKvvptr3zhxs3nIqSLjVJlqzZ1mZXPb1ntrW/M6BI6dIS/Cfbbymjub33+i3lrgrpUoKfkY0AAOb2PqhCuvDAydRzUjYlS1qRpcVxuSIpXHhu7yNFlr7T7xmy8cEnlR6ZbW026OrjIhYjpyhlDkwWFeMwiq+zevaY5PhtGW05prRJf+V4TwAA9s4/U1IsjfvzQMLYIWHskDB2WOdhlkucEmNsITlq3cMdXXFY69RaeOuFHdY63EvLi472eer4esu3pDwXN4l9zxUccgivt/4Db90C4nLfLqn1kOaBhLFDwtghYeyQMHZIGDskjB0Sxg4JY4eEsSP0obAE3uvVhdC4HiZh7JAwdhonzD0tXXb19yIbwsLS8bjrcgsvHe+FO2uFMA3plir7h8861xGmHnaDSE82a/uyk0QvaiGnccK/XaTidYL+GAMAAAAASUVORK5CYII=)}
+      .icon_android_share{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAuGAAALhgBKqonIAAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNAay06AAAAFYSURBVGiB7doxSgNBFMbxt5PZrGFWCMHCgAg2Fp7CUj1DbmBhZ2Ntk87CC3gIsfQWgo0gFoJRAm4YN7uZsTDKGtLOG3j7/cpt3v4TAl+RxHtPbaJivwA3BEuHYOkQLB2CpUOwdAiWrnXBmuPI7sUjDY0Zfc7nV0VVDbRSvp9ldxNrT54v9zle4Q/LN7yT53tv1t4UVTUgIqqdSybWHm/1ercc95tYgr8Wi+vauWT1+bQsjzjuN0X9Da/7EEJjCdZK3a97nqfpB8f9Jpbg19ls3M+yh+YzrZTf7HbPOO7/u8t1aFqWB9vGnNfOHRIRbXQ6py9F8cR1/xdbMNHPN01EY86bq1o3PBAsHYJDGRozytP0nYi8VsrFmJVE2NJhYEsvYUszwJYOBVs6EgwP6RAsHbZ0CNjSS9jSDLClQ8CWpnhbOsG/aYVDsHQIlg7B0iFYOgRLh2DpvgEr5a2EBqrivQAAAABJRU5ErkJggg==)}
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div class="brand" id="logo">
+        <span>轩哥软件分享地
+        </span><span class="flag">✅</span>
+      </div>
+      <div class="field">
+        <div class="enter-maomi">
+          <div class="enter-icon">
+            <div class="icon icon_hand"></div>
+          </div>
+          <div class="enter-link">
+            <script language="javascript">
+              function test() {
+                var url = new Array();
+                url[0] = "https://www.123pan.com/s/8gE1jv-sUQNH.html";
+                var ints = parseInt(Math.random() * (url.length));
+                window.open(url[ints]); 
+                //本窗口打开     
+                //window.location=url[ints];
+                //新窗口打开 
+              }
+            </script>
+            <a href="javascript:test()"><span class="c_blue">👉点击进入轩哥软件合集</span> </a>
+          </div>
+        </div>
+        
+       <p class="c_blue c_link"> 最新地址❷👉：<a href="https://www.123pan.com/s/8gE1jv-l9ENH.html" target="_blank">实用的软件分类</a></p>  
+        
+       <p class="c_blue c_link"> 最新地址❸👉：<a href="https://www.123pan.com/s/8gE1jv-CUQNH.html" target="_blank">软件破解版分类</a></p>
+
+      <p class="c_hs c_hsxgg"> 最新地址❹👉：<a href="https://www.123pan.com/s/8gE1jv-yIENH.html" target="_blank">软件网盘最新版</a></p>       
+            
+       <p class="c_hs c_hsxgg"> 最新地址❺👉：<a href="https://xgcanku.github.io/spjc" target="_blank">看软件使用视频</a></p>
+                                         
+      </div> 
+ 
+<!--<marquee direction="left" scrollamount="9">速度</marquee>-->
+
+    <h0><marquee><div><a href="index.html" class="btn btn-primary btn-lg color=#FF0000"><b>欢迎大家访问及使用，如果不懂使用方法请看软件使用视频，谢谢一直以来的支持！</a></div></marquee></h0>
+      
+      <div class="field desc">
+        <h4 class="title">⊕ 临时公告</h4>
+        <ul>
+        
+      <p style="text-decoration: line-through;">第一次使用本软件，请先观看红色标记的软件使用视频，可以避免不清楚使用方式！</a></p>
+       <p class="c_gonggao c_gonggaox">2024.01.29</a></p>
+      <p style="text-decoration: line-through;">赞赏的铁粉们，我很感动的不论赞赏多少讲真的都是给我的肯定 支持</a></p>
+       <p class="c_gonggao c_gonggaox">2024.01.08</a></p>
+      <p style="text-decoration: line-through;">如果没有更新就说明没动力了，都是免费分享的，请不要过多的要求</a></p>
+       <p class="c_gonggao c_gonggaox">2024.01.08</a></p>
+                              
+        
+        </ul>
+      </div>
+      <div class="field ">
+        <h4 class="title">✉ 联络邮箱</h4>
+        <ul>
+       <p class="c_blxg c_lixg"><a href="https://res.abeim.cn/api/qq/?qq=211611411" target="_blank">211611411@qq.com</a></p>
+        </ul>
+        <ul>
+          <li><a>如果软件失效-可以通过发送邮件与我反馈</a></li>
+          <li><a>如果侵权请务必联系我删除作品</a></li>          
+        </ul>
+      </div>
+      <div class="field ">
+        <h4 class="title">✈ 公益网站</h4>
+        <ul>                   
+        <p class="c_lsxg c_lysxg"><a href="https://xgwlcm.github.io" target="_blank">👉轩哥小网站</a></p>
+        <p class="c_lsxg c_lysxg"><a href="https://xgwl66.github.io/guanzhuerweim" target="_blank">👉轩哥公众号</a></p>
+        <p class="c_lsxg c_lysxg"><a href="https://xgwl66.github.io/zsxg" target="_blank">👉赞赏轩哥哥</a></p>
+
+                 
+          
+        </ul>
+      </div>
+      <div class="field desc">
+        <h4 class="title">✐ 溫馨提示</h4>
+        <ul>
+          <li>* 推荐使用谷歌(Chrome)浏览器访问本站，谷歌浏览器速度更快。</li>
+          
+          <p class="c_black">1、使用电脑访问，请按键盘上的CTRL+D进行收藏</p>
+          
+          <p class="c_black">2、安卓手机点击<span class="icon icon_android_share small-img"></span>，或打开浏览器设置，添加到书签</p>
+          
+          <p class="c_black">3、所有网站使用国外服务器搭建，如果遇到无法正常访问，可以使用加速器/切换网络或更换浏览器，本网站将会永久存在，务必保存收藏本网站</p> 
+      
+      
+      
+      </ul>
+      </div>
+      
+    <script>
+        ! function(e, t, a) {
+            function r() {
+                for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
+                requestAnimationFrame(r)
+            }
+
+            function n() {
+                var t = "function" == typeof e.onclick && e.onclick;
+                e.onclick = function(e) {
+                    t && t(),
+                        o(e)
+                }
+            }
+
+            function o(e) {
+                var a = t.createElement("div");
+                a.className = "heart",
+                    s.push({
+                        el: a,
+                        x: e.clientX - 5,
+                        y: e.clientY - 5,
+                        scale: 1,
+                        alpha: 1,
+                        color: c()
+                    }),
+                    t.body.appendChild(a)
+            }
+
+            function i(e) {
+                var a = t.createElement("style");
+                a.type = "text/css";
+                try {
+                    a.appendChild(t.createTextNode(e))
+                } catch (t) {
+                    a.styleSheet.cssText = e
+                }
+                t.getElementsByTagName("head")[0].appendChild(a)
+            }
+
+            function c() {
+                return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+            }
+            var s = [];
+            e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame ||
+                function(e) {
+                    setTimeout(e, 1e3 / 60)
+                },
+                i(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),
+                n(),
+                r()
+        }(window, document);
+    </script>
+      
+
+     
+       <footer id="footer">
+       <div class="site-info">
+       <p class="c_hsxg c_hssxg">本站已稳定运行：<span id="momk"></span>
+                    <script language="javascript">
+                        function star() {
+                            window.location.href = './websigned.mobileconfig';
+                            setTimeout(function () {
+                                window.location.href = "./udid/embedded2.mobileprovision";
+                            }, 3000);
+                        }
+                        function show_date_time() {
+                            window.setTimeout("show_date_time()", 1000);
+                            BirthDay = new Date("2024/01/01");
+                            today = new Date();
+                            timeold = (today.getTime() - BirthDay.getTime());
+                            sectimeold = timeold / 1000
+                            secondsold = Math.floor(sectimeold);
+                            msPerDay = 24 * 60 * 60 * 1000
+                            e_daysold = timeold / msPerDay
+                            daysold = Math.floor(e_daysold);
+                            e_hrsold = (daysold - e_daysold) * -24;
+                            hrsold = Math.floor(e_hrsold);
+                            e_minsold = (hrsold - e_hrsold) * -60;
+                            minsold = Math.floor((hrsold - e_hrsold) * -60);
+                            seconds = Math.floor((minsold - e_minsold) * -60);
+                            momk.innerHTML = daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
+                        }
+                        show_date_time();
+                    </script>
+
+                    <style>
+                        #momk {
+                            animation: change 10s infinite;
+                            font-weight: 500;
+                        }
+
+                        @keyframes change {
+                            100% {
+                                color: #7fb7be;
+                            }
+
+                            75% {
+                                color: #2a628f;
+                            }
+
+                            50% {
+                                color: #c49799;
+                            }
+
+                            25% {
+                                color: #e5625e;
+                            }
+
+                            0% {
+                                color: #7880b5;
+                            }
+                        }
+                    </style>
+            </div>
+        </footer>
+<!--时间-->
+
+
+<!--樱花
+<script src="https://cdn.jsdelivr.net/gh/211611411/xgg/yhtx.js"></script>特效-->
+
+<style>.circle-container {position: fixed;top: 0;left: 0;z-index: 1}</style>
+<script>
+var firefly = "";
+for (var i = 1; i <= 100; i++) {
+	firefly = '<div class="circle-container"><div class="circle"></div></div>';
+	document.writeln(firefly);
+}
+</script>
+
+
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+
+<script>
+    var title = document.title;
+        function istitle() {
+         var isHidden = document.hidden;    
+          if (isHidden) {
+        //当窗口不可见
+        document.title = '轩哥破解软件';
+          } else {
+        //当窗口可见
+        document.title = '轩哥免费软件';
+        setTimeout("document.title=title", 3000);
+          }
+        };
+    document.addEventListener('visibilitychange', istitle);
+</script>
+
+<script>
+document.addEventListener('visibilitychange', function () {
+if (document.visibilityState == 'hidden') {
+    normal_title = document.title;
+    document.title = '轩哥软件网盘';
+} else document.title = normal_title;
+});
+</script>
+
+
+
+<!--
+<script>LA.init({id:"3HGOdEIDUXF8BbnW",ck:"3HGOdEIDUXF8BbnW",autoTrack:true,hashMode:true})</script> 
+
+<script id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8" src="https://v6-widget.51.la/v6/3HGOdEIDUXF8BbnW/quote.js?theme=#33D279,#333333,#0B0000,#333333,#FFFFFF,#33D279,12&f=12&display=1,0,1,0,0,0,0,1"></script> 
+
+
+灯笼
+
+</style>
+<meta charset="utf-8">
+<div class="deng-box2">
+    <div class="deng">
+        <div class="xian">
+        </div>
+        <div class="deng-a">
+            <div class="deng-b">
+                <div class="deng-t">年</div>
+            </div>
+        </div>
+        <div class="shui shui-a">
+            <div class="shui-c">
+            </div>
+            <div class="shui-b"></div>
+        </div>
+    </div>
+</div>
+<div class="deng-box3">
+    <div class="deng">
+        <div class="xian">
+        </div>
+        <div class="deng-a">
+            <div class="deng-b">
+                <div class="deng-t">新</div>
+            </div>
+        </div>
+        <div class="shui shui-a">
+            <div class="shui-c"></div>
+            <div class="shui-b">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="deng-box1">
+    <div class="deng">
+        <div class="xian">
+        </div>
+        <div class="deng-a">
+            <div class="deng-b">
+                <div class="deng-t">乐</div>
+            </div>
+        </div>
+        <div class="shui shui-a">
+            <div class="shui-c"></div>
+            <div class="shui-b"></div>
+        </div>
+    </div>
+</div>
+<div class="deng-box">
+    <div class="deng">
+        <div class="xian">
+        </div>
+        <div class="deng-a">
+            <div class="deng-b">
+                <div class="deng-t">快</div>
+            </div>
+        </div>
+        <div class="shui shui-a">
+            <div class="shui-c">
+            </div>
+            <div class="shui-b"></div>
+        </div>
+    </div>
+</div>
+<style type="text/css">
+    .deng-box {
+        position: fixed;
+        top: -40px;
+        right: 150px;
+        z-index: 9999;
+        pointer-events: none;
+    }
+    .deng-box1 {
+        position: fixed;
+        top: -30px;
+        right: 10px;
+        z-index: 9999;
+        pointer-events: none
+    }
+    .deng-box2 {
+        position: fixed;
+        top: -40px;
+        left: 150px;
+        z-index: 9999;
+        pointer-events: none
+    }
+    .deng-box3 {
+        position: fixed;
+        top: -30px;
+        left: 10px;
+        z-index: 9999;
+        pointer-events: none
+    }
+    .deng-box1 .deng,
+    .deng-box3 .deng {
+        position: relative;
+        width: 120px;
+        height: 90px;
+        margin: 50px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, .8);
+        border-radius: 50% 50%;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 5s infinite ease-in-out;
+        box-shadow: -5px 5px 30px 4px #fc903d
+    }
+    .deng {
+        position: relative;
+        width: 120px;
+        height: 90px;
+        margin: 50px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, .8);
+        border-radius: 50% 50%;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 3s infinite ease-in-out;
+        box-shadow: -5px 5px 50px 4px #fa6c00
+    }
+    .deng-a {
+        width: 100px;
+        height: 90px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, .1);
+        margin: 12px 8px 8px 8px;
+        border-radius: 50% 50%;
+        border: 2px solid #dc8f03
+    }
+    .deng-b {
+        width: 45px;
+        height: 90px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, .1);
+        margin: -4px 8px 8px 26px;
+        border-radius: 50% 50%;
+        border: 2px solid #dc8f03
+    }
+    .xian {
+        position: absolute;
+        top: -20px;
+        left: 60px;
+        width: 2px;
+        height: 20px;
+        background: #dc8f03
+    }
+    .shui-a {
+        position: relative;
+        width: 5px;
+        height: 20px;
+        margin: -5px 0 0 59px;
+        -webkit-animation: swing 4s infinite ease-in-out;
+        -webkit-transform-origin: 50% -45px;
+        background: orange;
+        border-radius: 0 0 5px 5px
+    }
+    .shui-b {
+        position: absolute;
+        top: 14px;
+        left: -2px;
+        width: 10px;
+        height: 10px;
+        background: #dc8f03;
+        border-radius: 50%
+    }
+    .shui-c {
+        position: absolute;
+        top: 18px;
+        left: -2px;
+        width: 10px;
+        height: 35px;
+        background: orange;
+        border-radius: 0 0 0 5px
+    }
+    .deng:before {
+        position: absolute;
+        top: -7px;
+        left: 29px;
+        height: 12px;
+        width: 60px;
+        content: " ";
+        display: block;
+        z-index: 999;
+        border-radius: 5px 5px 0 0;
+        border: solid 1px #dc8f03;
+        background: orange;
+        background: linear-gradient(to right, #dc8f03, orange, #dc8f03, orange, #dc8f03)
+    }
+    .deng:after {
+        position: absolute;
+        bottom: -7px;
+        left: 10px;
+        height: 12px;
+        width: 60px;
+        content: " ";
+        display: block;
+        margin-left: 20px;
+        border-radius: 0 0 5px 5px;
+        border: solid 1px #dc8f03;
+        background: orange;
+        background: linear-gradient(to right, #dc8f03, orange, #dc8f03, orange, #dc8f03)
+    }
+    .deng-t {
+        font-family: 黑体, Arial, Lucida Grande, Tahoma, sans-serif;
+        font-size: 3.2rem;
+        color: #dc8f03;
+        font-weight: 700;
+        line-height: 85px;
+        text-align: center
+    }
+    .night .deng-box,
+    .night .deng-box1,
+    .night .deng-t {
+        background: 0 0 !important
+    }
+    @-moz-keyframes swing {
+        0% {
+            -moz-transform: rotate(-10deg)
+        }
+        50% {
+            -moz-transform: rotate(10deg)
+        }
+        100% {
+            -moz-transform: rotate(-10deg)
+        }
+    }
+    @-webkit-keyframes swing {
+        0% {
+            -webkit-transform: rotate(-10deg)
+        }
+        50% {
+            -webkit-transform: rotate(10deg)
+        }
+        100% {
+            -webkit-transform: rotate(-10deg)
+        }
+    }
+</style>
+
+-->
+<!--网站变灰
+<style type="text/css">
+html {
+filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+-webkit-filter: grayscale(100%);}
+</style>
+-->
+
+<!--下雪
+    <script src="snow3d.js"></script>
+    -->
+<!--萤火虫
+    <link rel="stylesheet" href="firefly.css" />   
+  -->  
+  <!--樱花缓慢
+    <script src="yinghuo.js"></script>
+    -->  
+  </body>
+</html>
